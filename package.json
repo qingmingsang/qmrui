@@ -1,15 +1,16 @@
 {
-  "name": "test",
+  "name": "qmrui",
   "version": "1.0.0",
-  "description": "",
-  "private": true,
-  "main": "index.js",
+  "description": "qm react ui library",
+  "main": "./dist/index.js",
   "scripts": {
     "watch": "webpack --watch",
-    "start": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js"
+    "start": "webpack-dev-server --open --config ./webpack/webpack.dev.js",
+    "build": "webpack --config ./webpack/webpack.prod.js"
   },
-  "keywords": [],
+  "keywords": [
+    "react"
+  ],
   "author": "qm",
   "license": "ISC",
   "devDependencies": {
@@ -17,14 +18,21 @@
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.6.3",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "source-map-loader": "^0.2.4",
     "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.0",
+    "typescript": "^3.6.4",
     "url-loader": "^2.2.0",
     "webpack": "^4.30.0",
+    "webpack-bundle-analyzer": "^3.6.0",
     "webpack-cli": "^3.3.1",
     "webpack-dev-server": "^3.3.1",
     "webpack-merge": "^4.2.1"
@@ -32,6 +40,8 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-hot-loader": "^4.12.15"
+    "react-hot-loader": "^4.12.15",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2"
   }
 }
