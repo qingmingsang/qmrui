@@ -6,14 +6,15 @@ import {
     Route,
     Link,
 } from "react-router-dom";
-import "./App.css";
+import "./style/App.less";
+
 const pagesRequire = require.context('./pages/', true, /.*\.jsx$/);
 const Pages = pagesRequire.keys().map((pageKey) => {
     return pageKey.split('./')[1].replace('.jsx', '');
 })
 const Links = () => {
     return (
-        <div className='App'>
+        <div className='index-link'>
             <ul>
                 {
                     Pages.map((name, k) => {

@@ -16,6 +16,39 @@ module.exports = merge(common, {
   },
   mode: 'production',
   //devtool: 'source-map',
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "babel-loader"
+          }, {
+            loader: "ts-loader"
+          }
+        ]
+      },
+      {
+        test: /\.css$/,
+        use: [
+          'style-loader', {
+            loader: 'css-loader',
+          }
+        ]
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader' // creates style nodes from JS strings
+        }, {
+          loader: 'css-loader',// translates CSS into CommonJS
+        }, {
+          loader: 'less-loader' // compiles Less to CSS
+        }]
+      },
+    ]
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new webpack.HashedModuleIdsPlugin(),

@@ -1,12 +1,17 @@
 import React, { PureComponent } from "react";
+import Wrapper from '../Wrapper';
 import { TouchFeed } from '../../src';
 
-export default class A extends PureComponent {
+export default class demo extends PureComponent {
     render() {
         return (
-            <div className="is-touch touch-block">
-                <TouchFeed />
-            </div>
+            <Wrapper>
+                <TouchFeed
+                    touchType='block'
+                >
+                    block
+                </TouchFeed>
+            </Wrapper>
         );
     }
 }

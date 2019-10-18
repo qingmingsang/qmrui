@@ -1,0 +1,72 @@
+@import './normalize.css';
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+ul,
+li {
+    padding: 0;
+    margin: 0;
+    list-style: none
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+.index-link {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+    ul {
+        display: flex;
+        flex-direction: column;
+    }
+    li+li {
+        margin-top: 20px;
+    }
+    a {
+        display: block;
+        background: lightblue;
+        padding: 5px 10px;
+    }
+}
+
+.index-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.index-wrapper__title {
+    display: block;
+    padding: 10px 10px 0 10px;
+}
+
+.index-wrapper__body {
+    width: 100%;
+    padding: 10px;
+    flex: 1;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.index-wrapper__content {
+    box-sizing: border-box;
+    border: 1px solid lightgrey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
