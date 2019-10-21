@@ -1,0 +1,112 @@
+// fade
+.fade-enter, .fade-appear {
+  opacity: 0;
+}
+.fade-enter-active, .fade-appear-active {
+  opacity: 1;
+  transition: .3s ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+  transition: .3s ease-out;
+}
+.fade-exit-done {
+  display: none !important;
+}
+
+// slide down
+.slide-down-enter, .slide-down-appear {
+  opacity: 0;
+  transform: translateY(-10%);
+}
+.slide-down-enter-active, .slide-down-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: .3s ease-out;
+}
+.slide-down-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-down-exit-active {
+  opacity: 0;
+  transform: translateY(-10%);
+  transition: .3s ease-in;
+}
+.slide-down-exit-done {
+  display: none !important;
+}
+
+// slide down 100%
+.slide-aldown-enter, .slide-aldown-appear {
+  opacity: 0;
+  transform: translateY(-100%);
+}
+.slide-aldown-enter-active, .slide-aldown-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: .3s ease-out;
+}
+.slide-aldown-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-aldown-exit-active {
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: .3s ease-in;
+}
+.slide-aldown-exit-done {
+  display: none !important;
+}
+
+// slide up
+.slide-up-enter, .slide-up-appear {
+  display: block !important;
+  transform: translateY(100%);
+}
+.slide-up-enter-done {
+  display: block !important;
+}
+.slide-up-enter-active, .slide-up-appear-active {
+  display: block !important;
+  transform: translateY(0);
+  transition: .3s ease;
+}
+.slide-up-exit {
+  display: block !important;
+  transform: translateY(0);
+}
+.slide-up-exit-active {
+  display: block !important;
+  transform: translateY(100%);
+  transition: .3s ease;
+}
+.slide-up-exit-done {
+  display: none !important;
+}
+
+// bubble
+.bubble-enter, .bubble-appear {
+  opacity: 0;
+  transform: scale(0);
+}
+.bubble-enter-active, .bubble-appear-active {
+  opacity: 1;
+  transform: scale(1);
+  transition: .3s cubic-bezier(.39,.36,0,1.14);
+  transform-origin: top center;
+}
+.bubble-exit {
+  opacity: 1;
+  transform: scale(1);
+}
+.bubble-exit-active {
+  opacity: 0;
+  transform: scale(0);
+  transition: .3s cubic-bezier(.67,-0.27,.27,.99);
+  transform-origin: top center;
+}

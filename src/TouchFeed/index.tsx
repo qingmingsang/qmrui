@@ -9,7 +9,7 @@ export interface ITouchProps {
   [propNm: string]: any;
 }
 
-class TouchFeed extends PureComponent<ITouchProps> {
+export default class TouchFeed extends PureComponent<ITouchProps> {
   public static defaultProps = {
     tagName: 'div',
     disabled: false,
@@ -68,5 +68,3 @@ class TouchFeed extends PureComponent<ITouchProps> {
     onClick && onClick(ev);
   }
 }
-
-export default TouchFeed;

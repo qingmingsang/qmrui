@@ -1,17 +1,17 @@
 import React, { PureComponent } from "react";
 import Wrapper from '../Wrapper';
-import { TouchFeed } from '../../src';
+import { RpxBlock } from '../../src';
 
 export default class demo extends PureComponent {
     render() {
         return (
             <Wrapper>
-                <TouchFeed
-                    touchType='block'
+                <RpxBlock
+                    side='around'
                     className='index-wrapper__block'
                 >
-                    TouchFeed
-                </TouchFeed>
+                    RpxBlock
+                </RpxBlock>
             </Wrapper>
         );
     }

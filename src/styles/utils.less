@@ -1,0 +1,160 @@
+// 工具类mixin, 这里只能放方法类(), 不能直接写class, 否则会重复生成代码!
+
+.ellipsis() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis(@num) when (@num > 1) {
+  // 多行
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: @num;
+}
+
+// scroll
+.scroll(@direction) {
+  height: 100%;
+  -webkit-overflow-scrolling: touch;
+  box-sizing: border-box;
+}
+.scroll(@direction) when (@direction = 'y') {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.scroll(@direction) when (@direction = 'x') {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.scrollY() {
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+.scrollX() {
+  overflow-y: hidden;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// 分割竖线
+.breakLine(@color: currentColor, @lineWidth: 1px) {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 8px;
+  &:before {
+    content: '';
+    display: block;
+    background-color: @color;
+    position: absolute;
+    width: @lineWidth;
+    height: 55%;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) scale3d(.5,1,1);
+  }
+  &:last-of-type:before {
+    display: none;
+  }
+}
+
+// flex
+.flexCenter() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex(@dire: row, @justify: flex-start, @align: flex-start) {
+  display: flex;
+  flex-direction: @dire; 
+  justify-content:  @justify; 
+  align-items: @align
+}
+
+// clearfix
+.clearfix() {
+  &:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+}
+
+// 空出footer的高度
+.hasFooter() {
+  &.has-footer {
+    padding-bottom: 60px;
+  }
+  .ios.iphoneX &.has-footer {
+    padding-bottom: 86px;
+  }
+}
+
+// 针对固定在底部的面板修复iphoneX高度
+.iphoneXBottom() {
+  .ios.iphoneX & {
+    padding-bottom: 26px;
+  }
+}
+.iphoneXBottomAfter() {
+  .ios.iphoneX &:after {
+    content: '';
+    display: block;
+    padding-bottom: 26px;
+  }
+}
+
+// RpxBlock添加1px边框
+.rpx(@direction, @color){
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+.rpx(@direction, @color) when (@direction = 'bottom') {
+  bottom: 0;
+  background-color: @color;
+  height: 1px;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    transform-origin: bottom;
+    transform: scale3d(1, .5, .9);
+  }
+}
+.rpx(@direction, @color) when (@direction = 'top') {
+  top: 0;
+  background-color: @color; 
+  height: 1px;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    transform-origin: top;
+    transform: scale3d(1, .5, .9);
+  }
+}
+.rpx(@direction, @color) when (@direction = 'around') {
+  top: 0;
+  height: 100%;
+  border: 1px solid @color;
+  box-sizing: border-box;
+  border-radius: 4px;
+  pointer-events: none;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    border-radius: 8px;
+    transform: scale3d(.5, .5, 1);
+  }
+}
+
+// 修改圆角弧度
+.rpx(@direction, @color, @rpxRadio) when (@direction = 'around') {
+  .rpx(@direction, @color);
+  border-radius: @rpxRadio / 2;
+  @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    border-radius: @rpxRadio;
+  }
+}

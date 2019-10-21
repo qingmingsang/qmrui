@@ -1,0 +1,25 @@
+@import './var.less';
+@import './font.less';
+
+@pullBar: 36px;
+
+// 下拉、上拉bar样式
+.pull__refresh {
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  .fontSize(24);
+  color: @side6;
+  padding: @pullBar / 4px 0;
+  .iconfont {
+    display: inline-block;
+    color: @blueCtrip;
+    margin-right: 8px;
+  }
+  .is-rotate {
+    animation: loadingCircle .5s ease infinite both;
+  }
+  .is-error {
+    color: #EE693B;
+  }
+}

@@ -1,0 +1,96 @@
+@import './utils.less';
+
+// 公共样式
+html, body, #__next {
+  height: 100%;
+}
+#__next {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+#__next > div {
+  height: 100%;
+}
+body {
+  font-size: 12px;
+  font-family: Helvetica Neue,Helvetica,Arial,PingFang SC,Hiragino Sans GB,Heiti SC,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body:not(input), body:not(textarea) {
+  -webkit-user-select: none;
+  user-select: none;
+}
+// fix ios apps
+body.app #__next {
+  padding-top: 20px;
+}
+body.app.iphoneX #__next {
+  padding-top: 44px;
+}
+body.app.headless #__next {
+  padding-top: 0;
+}
+
+// 部分样式重置
+a {
+  text-decoration: none;
+  color: inherit;
+}
+i {
+  font-style: normal;
+}
+
+// utils
+.ellips {
+  .ellipsis();
+}
+// clearfix
+.clearfix {
+  .clearfix();
+}
+// flex居中
+.fx-c {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+// 竖线
+.break {
+  .breakLine();
+}
+
+.iphoneX-bottom {
+  .iphoneXBottomAfter();
+}
+
+// Flex布局
+.flex { .flex(); }
+.fr-lt { .flex( row, flex-start, flex-start); }
+.fr-lc { .flex( row, flex-start, center); }
+.fr-lb { .flex( row, flex-start, flex-end); }
+.fr-ls { .flex( row, flex-start, stretch); }
+.fr-rt { .flex( row, flex-end, flex-start); }
+.fr-rc { .flex( row, flex-end, center); }
+.fr-rb { .flex( row, flex-end, flex-end); }
+.fr-rs { .flex( row, flex-end, stretch); }
+.fr-ct { .flex( row, center, flex-start); }
+.fr-cc { .flex( row, center, center); }
+.fr-cb { .flex( row, center, flex-end); }
+.fr-cs { .flex( row, center, stretch); }
+.fr-st { .flex( row, space-between, flex-start); }
+.fr-sc { .flex( row, space-between, center); }
+.fr-sb { .flex( row, space-between, flex-end); }
+.fr-ss { .flex( row, space-between, stretch); }
+
+.fc-lt { .flex( column, flex-start, flex-start); }
+.fc-lc { .flex( column, center, flex-start); }
+.fc-lb { .flex( column, flex-end, flex-start); }
+.fc-ls { .flex( column, space-between, flex-start); }
+.fc-rt { .flex( column, flex-start, flex-end); }
+.fc-rc { .flex( column, center, flex-end); }
+.fc-rb { .flex( column, flex-end, flex-end); }
+.fc-rs { .flex( column, space-between, flex-end); }
+.fc-ct { .flex( column, flex-start, center); }
+.fc-cc { .flex( column, center, center); }
+.fc-cb { .flex( column, flex-end, center); }
+.fc-cs { .flex( column, space-between, center); }

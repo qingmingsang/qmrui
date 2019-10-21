@@ -1,0 +1,13 @@
+@import '../styles/utils.less';
+.thanos-rpx {
+    position: relative; // 1px下边框
+    &.is-bottom:after {
+        .rpx('bottom', #e0e0e0);
+    } // 1px上边框
+    &.is-top:after {
+        .rpx('top', #e0e0e0);
+    } // 环绕型边框
+    &.is-around:after {
+        .rpx('around', #e0e0e0);
+    }
+}
